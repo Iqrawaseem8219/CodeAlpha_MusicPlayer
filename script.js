@@ -33,11 +33,11 @@ const playlists = [
   {
     name: "Chill Vibes",
     songs: [
-      {title:"True Stories", artist:"AP Dhillon", src:"song/True Stories - SirfJatt.Com.mp3", cover:"covers/c0-1.jpg"},
-      {title:"Late Night", artist:"Chill Collective", src:"audio/playlist0/late-night.mp3", cover:"covers/c0-2.jpg"},
-      {title:"Warmth", artist:"Soft Keys", src:"audio/playlist0/warmth.mp3", cover:"covers/c0-3.jpg"},
-      {title:"Coastal", artist:"Oceanic", src:"audio/playlist0/coastal.mp3", cover:"covers/c0-4.jpg"},
-      {title:"Blue Hour", artist:"Evening Sounds", src:"audio/playlist0/blue-hour.mp3", cover:"covers/c0-5.jpg"}
+      {title:"True Stories", artist:"AP Dhillon", src:"song/True Stories - SirfJatt.Com.mp3", cover:"https://i.ytimg.com/vi/vzAoVL77ORs/maxresdefault.jpg"},
+      {title:"Safety Off", artist:"Shubh", src:"song/Safety - SirfJatt.Com.mp3", cover:"https://tse1.mm.bing.net/th/id/OIP.fwd0WGaKvvDslTIN9VjLtwHaEK?pid=Api&P=0&h=220"},
+      {title:"Tension", artist:"Diljit Dosanjh", src:"song/Tension-mp3-song-by-Diljit-Dosanjh.mp3", cover:"https://i.ytimg.com/vi/8_JyoKPUtuA/hqdefault.jpg"},
+      {title:"wavy", artist:"Karan Aujla ", src:"song/Wavy - SirfJatt.Com.mp3", cover:"https://tse4.mm.bing.net/th/id/OIP.SYcl6S0_bcOHU3mHvfDwrAHaEK?pid=Api&P=0&h=220"},
+      {title:"Jatt Diyan Tauran Ne", artist:" Gippy Grewal, Shipra Goyal, Adrija Gupta, Jatinder Shah & Kumaar", src:"song/", cover:"https://tse4.mm.bing.net/th/id/OIP.UH30F0evdyQlBX-LoZHrpAHaEK?pid=Api&P=0&h=220"}
     ]
   },
   {
@@ -300,4 +300,5 @@ function init(){
   audio.volume = parseFloat(volumeEl.value);
   autoplayToggle.checked = true; // default on
 }
+
 init();
