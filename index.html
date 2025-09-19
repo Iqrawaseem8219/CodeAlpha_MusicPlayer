@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vibes Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Vibes background canvas/overlay -->
+    <div class="vibes-bg">
+      <div class="glow"></div>
+      <div class="bokeh b1"></div>
+      <div class="bokeh b2"></div>
+      <div class="bokeh b3"></div>
+    </div>
+
+    <header class="header">
+      <h1>Vibes — Music Player</h1>
+      <div class="controls-top">
+        <label class="switch">
+          <input id="autoplayToggle" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <span class="small">Autoplay</span>
+      </div>
+    </header>
+
+    <main class="player-card">
+      <section class="left">
+        <div class="cover">
+          <img id="coverImg" src="placeholder-cover.jpg" alt="cover" />
+          <div class="pulse"></div>
+        </div>
+
+        <div class="meta">
+          <div class="title" id="title">Select a song</div>
+          <div class="artist" id="artist">—</div>
+        </div>
+
+        <div class="seek">
+          <span id="currentTime">0:00</span>
+          <input id="progress" type="range" min="0" max="100" value="0" />
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="actions">
+          <button id="prev" title="Previous">⏮</button>
+          <button id="playPause" class="big" title="Play / Pause">▶</button>
+          <button id="next" title="Next">⏭</button>
+        </div>
+
+        <div class="extra">
+          <div class="volume">
+            <span>🔊</span>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.9" />
+          </div>
+
+          <div class="playback">
+            <button id="shuffle" title="Shuffle">🔀</button>
+            <button id="repeat" title="Repeat">🔁</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="right">
+        <div class="playlist-controls">
+          <label for="playlistSelect">Choose Playlist:</label>
+          <select id="playlistSelect">
+            <option value="0">Chill Vibes</option>
+            <option value="1">Groovy Night</option>
+            <option value="2">Sunny Beats</option>
+            <option value="3">Indie Flow</option>
+            <option value="4">Retro Mix</option>
+            <option value="5">Deep House</option>
+          </select>
+        </div>
+
+        <ul id="playlist" class="playlist">
+          <!-- JS populates -->
+        </ul>
+
+        <div class="footer-note">
+          <small>Tip: Press <kbd>Space</kbd> to play/pause • <kbd>←</kbd>/<kbd>→</kbd> previous/next</small>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Hidden audio element -->
+  <audio id="audio"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
