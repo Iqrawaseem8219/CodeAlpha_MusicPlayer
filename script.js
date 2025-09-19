@@ -37,7 +37,7 @@ const playlists = [
       {title:"Safety Off", artist:"Shubh", src:"song/Safety - SirfJatt.Com.mp3", cover:"https://tse1.mm.bing.net/th/id/OIP.fwd0WGaKvvDslTIN9VjLtwHaEK?pid=Api&P=0&h=220"},
       {title:"Tension", artist:"Diljit Dosanjh", src:"song/Tension-mp3-song-by-Diljit-Dosanjh.mp3", cover:"https://i.ytimg.com/vi/8_JyoKPUtuA/hqdefault.jpg"},
       {title:"wavy", artist:"Karan Aujla ", src:"song/Wavy - SirfJatt.Com.mp3", cover:"https://tse4.mm.bing.net/th/id/OIP.SYcl6S0_bcOHU3mHvfDwrAHaEK?pid=Api&P=0&h=220"},
-      {title:"Jatt Diyan Tauran Ne", artist:" Gippy Grewal, Shipra Goyal, Adrija Gupta, Jatinder Shah & Kumaar", src:"song/", cover:"https://tse4.mm.bing.net/th/id/OIP.UH30F0evdyQlBX-LoZHrpAHaEK?pid=Api&P=0&h=220"}
+      {title:"Jatt Diyan Tauran Ne", artist:" Gippy Grewal, Shipra Goyal, Adrija Gupta, Jatinder Shah & Kumaar", src:"song/Jatt Diyan Tauran (Full Audio Song) _ Gippy Grewal _ Punjabi Audio Song _ Speed Records.mp3", cover:"https://tse4.mm.bing.net/th/id/OIP.UH30F0evdyQlBX-LoZHrpAHaEK?pid=Api&P=0&h=220"}
     ]
   },
   {
@@ -302,3 +302,4 @@ function init(){
 }
 
 init();
+
