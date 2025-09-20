@@ -63,7 +63,7 @@ const playlists = [
     songs: [
       {title:"Ali-maula-Ali-maula-Ali-dam-dam", artist:"Nusrat Fateh Ali Khan (NFAK)", src:"song/ali-maula-ali-maula-ali-dam-dam.mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.mrb6XjCRvL9FlNu3UWj4_QHaFj?pid=Api&P=0&h=220"},
       {title:"Ya-Hayyu-Ya-Qayyum", artist:"Nusrat Fateh Ali Khan (NFAK)", src:"song/Nusrat-Fateh-Ali-Khan-Ya-Hayyu-Ya-Qayyum.mp3", cover:"https://tse4.mm.bing.net/th/id/OIP.1eMuPwDddNs7egBXsj8V1wHaFj?pid=Api&P=0&h=220"},
-      {title:"Tajdar-e-Haram ", artist:"Ghulam Fareed Sabri", src:"song/dam-mast-qalandar.mp3", cover:"https://tse2.mm.bing.net/th/id/OIP.y3ylIP0ihcz8mDLUJDocaAHaFj?pid=Api&P=0&h=220"},
+      {title:"Tajdar-e-Haram ", artist:"Ghulam Fareed Sabri", src:"song/Ghulam_farid_sabri-qawal-Tajdar_e_haram.mp3", cover:"https://tse2.mm.bing.net/th/id/OIP.y3ylIP0ihcz8mDLUJDocaAHaFj?pid=Api&P=0&h=220"},
       {title:"dam-mast-qalandar", artist:"Nusrat Fateh Ali Khan (NFAK)", src:"song/dam-mast-qalandar.mp3", cover:"https://tse2.mm.bing.net/th/id/OIP.wMGOTlOmTWsZkqWJ8aHr9gHaEK?pid=Api&P=0&h=220"},
       {title:"Allah-hoo-Allah-hoo", artist:"Nusrat Fateh Ali Khan (NFAK)", src:"song/allah-hoo-allah-hoo.mp3", cover:"https://tse1.mm.bing.net/th/id/OIP.y5WZZHllPVZZJEDxbuBiRQHaEK?pid=Api&P=0&h=220"}
     ]
@@ -304,5 +304,6 @@ function init(){
 }
 
 init();
+
 
 
