@@ -1,6 +1,3 @@
-/* Vibes Music Player - script.js
-   Put audio files under audio/playlistX/ as referenced below, or change urls.
-*/
 
 const audio = document.getElementById('audio');
 const playPauseBtn = document.getElementById('playPause');
@@ -25,13 +22,9 @@ let currentSongIndex = 0;
 let isShuffle = false;
 let isRepeat = false;
 
-// ---- Playlists data ----
-// Replace URLs with your own file paths. Example paths assume:
-// audio/playlist0/song1.mp3, audio/playlist1/song2.mp3, etc.
-// Add album art in 'cover' property (can be local file paths).
 const playlists = [
   {
-    name: "Chill Vibes",
+    name: "Mafia Vibes",
     songs: [
       {title:"True Stories", artist:"AP Dhillon", src:"song/True Stories - SirfJatt.Com.mp3", cover:"https://i.ytimg.com/vi/vzAoVL77ORs/maxresdefault.jpg"},
       {title:"Safety Off", artist:"Shubh", src:"song/Safety - SirfJatt.Com.mp3", cover:"https://tse1.mm.bing.net/th/id/OIP.fwd0WGaKvvDslTIN9VjLtwHaEK?pid=Api&P=0&h=220"},
@@ -41,25 +34,27 @@ const playlists = [
     ]
   },
   {
-    name: "Groovy Night",
+    name: "Love songs",
     songs: [
-      {title:"Groove Street", artist:"Night Owls", src:"audio/playlist1/groove-street.mp3", cover:"covers/c1-1.jpg"},
-      {title:"Neon Lights", artist:"RetroBeats", src:"audio/playlist1/neon-lights.mp3", cover:"covers/c1-2.jpg"},
-      {title:"Midnight Funk", artist:"Funk Lab", src:"audio/playlist1/midnight-funk.mp3", cover:"covers/c1-3.jpg"},
-      {title:"Club Walk", artist:"DJ Smooth", src:"audio/playlist1/club-walk.mp3", cover:"covers/c1-4.jpg"}
+      {title:"IDK HOW", artist:"Karan Aujla", src:"song/IDK_HOW_Karan_Aujla.mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.AObEELQRx88CVoGqeP7A8gHaEK?pid=Api&P=0&h=220"},
+      {title:"Tere Bina Na Guzara E", artist:"Josh brar", src:"song/Tere Bina Na Guzara E - SirfJatt.Com.mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.qs8Pk4f6RLoYjs-XL5_W_QHaHa?pid=Api&P=0&h=220"},
+      {title:"Piya O Re Piya", artist:"Atif Aslam", src:"song/shreya-ghoshal-atif-aslam-piya-o-re-piya-tere-naal-love-ho-gaya.mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.T6MdivKFWULgh81L3bUTMwHaEK?pid=Api&P=0&h=220"},
+      {title:"Mann Mera", artist:"Gajendra Verma", src:"song/Mann Mera Original Version - PagalWorld.mp3", cover:"https://tse2.mm.bing.net/th/id/OIP.VVf_2rwG5tCnBHVK6s0IrgAAAA?pid=Api&P=0&h=220"},
+      {title:"Tu Hi Haqeeqat Khwab Tu", artist:"Javed Ali", src:"song/Tu Hi Haqeeqat Khwab Tu_128.mp3", cover:"https://tse1.mm.bing.net/th/id/OIP.BCK-mAPi5HVNosCgZk8JBAHaFj?pid=Api&P=0&h=220"}
     ]
   },
   {
-    name: "Sunny Beats",
+    name: "Rap Rush",
     songs: [
-      {title:"Sunrise Run", artist:"Daylight", src:"audio/playlist2/sunrise-run.mp3", cover:"covers/c2-1.jpg"},
-      {title:"Palm Drive", artist:"Beachset", src:"audio/playlist2/palm-drive.mp3", cover:"covers/c2-2.jpg"},
-      {title:"Warm Coffee", artist:"Acoustic Soul", src:"audio/playlist2/warm-coffee.mp3", cover:"covers/c2-3.jpg"},
-      {title:"Open Sky", artist:"Mornings", src:"audio/playlist2/open-sky.mp3", cover:"covers/c2-4.jpg"}
-    ]
+      {title:"STFU", artist:"AP Dhillon, Shinda Kahlon", src:"song/STFU_AP_Dhillon_Shinda_Kahlon.mp3", cover:"https://tse1.mm.bing.net/th/id/OIP.6CqiHdgqmfzx1ZCbmuAbkQHaEK?pid=Api&P=0&h=220"},
+      {title:"King Shit", artist:"Shubh", src:"song/King Shit - Shubh(MixJio.In).mp3", cover:"https://tse1.mm.bing.net/th/id/OIP.Xg0yz35IEYVKD2w-B4-obQHaEK?pid=Api&P=0&h=220"},
+      {title:"Winning Speech", artist:"Karan Aujla", src:"song/Winning Speech - SirfJatt.Com.mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.cQICp21uj12313UZ8xZyxwHaEK?pid=Api&P=0&h=220"},
+      {title:"Amplifier", artist:"Imran Khan", src:"song/Amplifier_128.mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.QDQ9sdKhkIKhtBSiermD4wHaEK?pid=Api&P=0&h=220"},
+       {title:"Lalkara", artist:"Diljit Dosanjh", src:"song/Lalkara_128.mp3", cover:"https://tse1.mm.bing.net/th/id/OIP.pxMj2CLaQSKpji5otxYqoAHaEK?pid=Api&P=0&h=220"}
+      ]
   },
   {
-   name: "Sufi Qawali",
+    name: "Sufi Qawali",
     songs: [
       {title:"Ali-maula-Ali-maula-Ali-dam-dam", artist:"Nusrat Fateh Ali Khan (NFAK)", src:"song/ali-maula-ali-maula-ali-dam-dam.mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.mrb6XjCRvL9FlNu3UWj4_QHaFj?pid=Api&P=0&h=220"},
       {title:"Ya-Hayyu-Ya-Qayyum", artist:"Nusrat Fateh Ali Khan (NFAK)", src:"song/Nusrat-Fateh-Ali-Khan-Ya-Hayyu-Ya-Qayyum.mp3", cover:"https://tse4.mm.bing.net/th/id/OIP.1eMuPwDddNs7egBXsj8V1wHaFj?pid=Api&P=0&h=220"},
@@ -69,33 +64,34 @@ const playlists = [
     ]
   },
   {
-    name: "Retro Mix",
+    name: "Sad Songs",
     songs: [
-      {title:"Vinyl Nights", artist:"Retro King", src:"audio/playlist4/vinyl-nights.mp3", cover:"covers/c4-1.jpg"},
-      {title:"Cassette Tape", artist:"OldSchool", src:"audio/playlist4/cassette-tape.mp3", cover:"covers/c4-2.jpg"},
-      {title:"Echoes", artist:"Vintage", src:"audio/playlist4/echoes.mp3", cover:"covers/c4-3.jpg"}
+      {title:"Bewafa", artist:"Imran khan", src:"song/Bewafa - Imran Khan.mp3", cover:"https://tse1.mm.bing.net/th/id/OIP.ox_grcrslnF04ZfyjCk5wgHaEK?pid=Api&P=0&h=220"},
+      {title:"Ijazat", artist:"Falak Shabir", src:"song/Ijazat.mp3", cover:"https://tse1.mm.bing.net/th/id/OIP.iIfXe4eoyU0ex297U_fS1gHaCs?pid=Api&P=0&h=220"},
+      {title:"Ki Samjhaiye", artist:"Amrinder Gill", src:"song/Ki Samjhaiye_128-(PagalWorld.Org.Im).mp3", cover:"https://tse1.mm.bing.net/th/id/OIP.hSZZ0xJwAshjjAYNQJ1WIQHaEK?pid=Api&P=0&h=220"},
+      {title:"Raanjhan", artist:"Parampara Tandon", src:"song/Raanjhan - Parampara Tandon(MixJio.In).mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.0nkgmKyZwm5n8Bz0Tj7wiAHaHa?pid=Api&P=0&h=220"},
+      {title:"Uska Hi Banana", artist:"Arjit singh", src:"song/08 - Uska Hi Banana [Songspk.name].mp3", cover:"https://tse4.mm.bing.net/th/id/OIP.HLc6kkbNj3gzujfh5y4NqQHaEK?pid=Api&P=0&h=220"}
     ]
   },
   {
-    name: "Deep House",
+    name: "OST",
     songs: [
-      {title:"Underwater", artist:"HouseLab", src:"audio/playlist5/underwater.mp3", cover:"covers/c5-1.jpg"},
-      {title:"Pulse", artist:"Beat Forge", src:"audio/playlist5/pulse.mp3", cover:"covers/c5-2.jpg"},
-      {title:"Nightfall", artist:"SubGroove", src:"audio/playlist5/nightfall.mp3", cover:"covers/c5-3.jpg"},
-      {title:"Low Light", artist:"GrooveSmith", src:"audio/playlist5/low-light.mp3", cover:"covers/c5-4.jpg"},
+      {title:"Ehd e Wafa ", artist:"Aima Baig, Asim Azhar & Ali Zafar", src:"song/36 - Ehd e Wafa - OST - Hum TV (ApniISP.Com).mp3", cover:"https://tse4.mm.bing.net/th/id/OIP.q1zc1abAm7GZtCD8ub5jXQHaFG?pid=Api&P=0&h=220"},
+      {title:"Meem Se Mohabbat ", artist:"Asim Azhar & Qirat Haider", src:"song/71 - Meem Se Mohabbat - OST - HUM TV (ApniISP.Com).mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.3bJZQeECqnqScpS4vLLxRAHaEQ?pid=Api&P=0&h=220"},
+      {title:"Ishq Murshid ", artist:"Ahmed Jehanzeb", src:"song/67 - Ishq Murshid - OST - HUM TV (ApniISP.Com).mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.3egps6p9n6lDT5YuRtDVzQHaEK?pid=Api&P=0&h=220"},
+      {title:"Raqs-E-Bismil", artist:"Vicky Akbar", src:"song/53 - Raqs-e-Bismil - OST - HUM TV (ApniISP.Com).mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.JW9iRcupO2sHdxoM54dO8wHaEx?pid=Api&P=0&h=220"},
+     {title:"Khamoshi ", artist:"Bilal khan", src:"song/08 - Khamoshi - OST - HumTV (ApniISP.Com).mp3", cover:"https://tse3.mm.bing.net/th/id/OIP.Os2NzXFgMXdi6g6Q8zExCgHaEF?pid=Api&P=0&h=220"},
     ]
   }
 ];
 
-// populate playlist select names
 playlists.forEach((p, idx) => {
   const opt = document.createElement('option');
   opt.value = idx;
   opt.innerText = p.name;
-  // first options already present in HTML; safe to ignore duplicates
+
 });
 
-// Fill UI playlist
 function renderPlaylist(){
   playlistEl.innerHTML = '';
   const list = playlists[currentPlaylistIndex].songs;
@@ -302,8 +298,4 @@ function init(){
   audio.volume = parseFloat(volumeEl.value);
   autoplayToggle.checked = true; // default on
 }
-
 init();
-
-
-
